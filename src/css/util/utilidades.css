@@ -1,0 +1,38 @@
+.btn{
+    text-align: center;
+    width: 100%;
+    background-color: transparent;
+    font-family: var(--ralenway);
+    padding: 11px;
+    cursor: pointer;
+    transition: ease-in .3s;
+    border: none;
+}
+.btn-principal{color: var(--black); border:solid 1px var(--black);}
+.btn-principal:hover{ background-color: var(--black); color: var(--white); transition: ease-out .3s;}
+.btn-secundario{color: var(--blue); border:solid 1px var(--blue);}
+.btn-secundario:hover{ background-color: var(--blue); color: var(--white); transition: ease-out .3s;}
+/* LOGO */
+.logo{width: 100px;height: auto;}
+/* Background colors */
+.bg-grey{background-color: var(--grey);}
+/* Espacio */
+.espacio{padding: 50px 0;}
+/* ===== Centrar texto =====*/
+.centrar-texto{text-align: center;}
+/* ====SVG ICONS===== */
+.svg-icon {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .svg-icon path,
+  .svg-icon polygon,
+  .svg-icon rect {
+    fill: var(--white);
+  }
+  
+  .svg-icon circle {
+    stroke: #4691f6;
+    stroke-width: 1;
+  }

@@ -1,0 +1,38 @@
+footer{width: 100%;}
+.footer-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 50px;
+    padding: 23px 0;
+}
+
+.footer-content nav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.footer-content a{color: var(--white);}
+.redes-sociales{color: var(--white);}
+.redes-sociales nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+@media (min-width: 768px) {
+    .footer-content{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+@media (min-width: 768px) {
+    .footer-content nav{
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+}
