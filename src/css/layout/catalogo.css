@@ -1,0 +1,62 @@
+.catalogo{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+@media (min-width: 1200px) {
+    .catalogo{
+        display: grid;
+        grid-template-columns: 10% 90%;
+    }
+}
+/*Filtros*/
+.filtros{
+    display: flex;
+    flex-direction: column;
+    border-bottom: solid 1px var(--black);
+    padding-bottom: 10px;
+    gap: 20px;
+}
+@media (min-width: 1200px) {
+    .filtros{
+        flex-direction: column;
+        justify-content: flex-start;
+        border-bottom: none;
+        padding-bottom: none;
+        border-right: solid 1px var(--black);
+    }
+}
+.filtros h6{
+    font-weight: bold;
+    font-size: 16px;
+}
+.filtrarMarca p{
+    cursor: pointer;
+    text-transform: uppercase;
+    font-family: var(--ralenway);
+}
+.filtrarYear select, .filtro-color select, .filtrarMarca select{
+    margin-top: 10px;
+    width: 90%;
+    padding: 5px;
+    font-family: var(--ralenway);
+}
+/* galeria carros */
+.galeriaCarros{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+@media (min-width: 768px) {
+    .galeriaCarros{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (min-width: 1200px) {
+    .galeriaCarros{
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+    }
+}

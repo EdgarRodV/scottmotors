@@ -1,0 +1,22 @@
+.mantenimientoImg{
+    background-image: url(../../img/mantenimiento.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    height: 300px;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+@media (min-width: 768px) {
+    main{
+        display: grid;
+        grid-template-columns: 30% 70%;
+        gap: 20px;
+        align-items: center;
+    }
+    .mantenimientoImg{height: 100%;}
+}

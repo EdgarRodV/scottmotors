@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" ng-app="scottmotors">
 
 <head>
   <meta charset="UTF-8" />
@@ -14,12 +14,14 @@
   <link rel="stylesheet" href="src/css/layout/footer.css">
   <link rel="stylesheet" href="src/css/layout/index.css" />
   <!-- GOOGLE ICONS -->
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <!-- Javascript -->
+  <script src="src/js/lib/angular.min.js"></script>
+  <script src="src/js/app.js"></script>
   <title>Scott Motors</title>
 </head>
 
-<body>
+<body ng-controller="listadoCtrl">
   <header class="bg-grey">
     <div class="header-content">
       <div class="logo-menu container">
@@ -31,10 +33,9 @@
       <div>
         <input type="checkbox" name="btn-menu" id="btn-menu">
         <nav class="nav-principal">
-          <a href="#">Modelos</a>
-          <a href="#">Mantenimiento</a>
-          <a href="#">Servicios</a>
-          <a href="#">Promociones</a>
+          <a href="index.html">Inicio</a>
+          <a href="catalogo.html">Modelos</a>
+          <a href="mantenimiento.html">Mantenimiento</a>
         </nav>
       </div>
     </div>
@@ -43,9 +44,9 @@
     <div class="overlay">
       <div class="container">
         <div class="heroeHeaderContent-index">
-          <h1>Title</h1>
+          <h1>Scott Motors</h1>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, recusandae enim corrupti dignissimos possimus itaque ipsam, voluptatum veritatis quasi similique aspernatur. Quos delectus, quis eum unde corporis nam deleniti excepturi.</p>
-          <button class="btn btn-principal">Button</button>
+          <button class="btn btn-principal"><a href="catalogo.html">Modelos</a></button>
         </div>
       </div>
     </div>
@@ -53,81 +54,24 @@
   <main class="espacio container">
     <h2>Destacado</h2>
     <div class="destacado-content">
-      <div class="card">
+      <div class="card" ng-repeat="carro in carros | filter: carro.Destacado = true">
         <picture>
-          <img src="src/img/autos/bmw.jpg" alt="">
+          <img ng-src="src/img/autos/{{carro.img}}.jpg" alt="">
         </picture>
         <div class="card-desc">
           <div class="modelo-year">
-            <h6>BMW Modelo S</h6>
-            <h6>2020</h6>
+            <h6>{{carro.Marca}} {{carro.Modelo}}</h6>
+            <h6>{{carro.Year}}</h6>
           </div>
-          <p>Transmisión automática</p>
-          <h5>$700,000.00</h5>
+          <p>{{carro.Transmision}}</p>
+          <h5>{{carro.Precio | currency}}</h5>
         </div>
       </div>
-      <!-- FIN DE LA CARD -->
-      <div class="card">
-        <picture>
-          <img src="src/img/autos/ferrari.jpg" alt="">
-        </picture>
-        <div class="card-desc">
-          <div class="modelo-year">
-            <h6>Ferrari</h6>
-            <h6>2020</h6>
-          </div>
-          <p>Transmisión automática</p>
-          <h5>$800,000.00</h5>
-        </div>
-      </div>
-      <!-- FIN DE LA CARD -->
-      <div class="card">
-        <picture>
-          <img src="src/img/autos/jeep.jpg" alt="">
-        </picture>
-        <div class="card-desc">
-          <div class="modelo-year">
-            <h6>Jeep</h6>
-            <h6>2020</h6>
-          </div>
-          <p>Transmisión automática</p>
-          <h5>$1,300,000.00</h5>
-        </div>
-      </div>
-      <!-- FIN DE LA CARD -->
-      <div class="card">
-        <picture>
-          <img src="src/img/autos/mazda 3.jpg" alt="">
-        </picture>
-        <div class="card-desc">
-          <div class="modelo-year">
-            <h6>Mazda 3</h6>
-            <h6>2020</h6>
-          </div>
-          <p>Transmisión automática</p>
-          <h5>$865,000.00</h5>
-        </div>
-      </div>
-      <!-- FIN DE LA CARD -->
-      <div class="card">
-        <picture>
-          <img src="src/img/autos/mercedes-benz.jpg" alt="">
-        </picture>
-        <div class="card-desc">
-          <div class="modelo-year">
-            <h6>Mercedes Benz </h6>
-            <h6>2020</h6>
-          </div>
-          <p>Transmisión automática</p>
-          <h5>$1,350,000.00</h5>
-        </div>
-      </div>
-      <!-- FIN DE LA CARD -->
     </div>
   </main>
   <section class="contacto container">
     <div class="contacto-img"></div>
-    <form action="" class="form-contacto">
+    <form action="" class="form">
       <h3 class="centrar-texto">Contactanos</h3>
       <div class="campo">
         <input type="text" placeholder="Nombre">

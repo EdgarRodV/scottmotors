@@ -8,8 +8,10 @@
     transition: ease-in .3s;
     border: none;
 }
-.btn-principal{color: var(--black); border:solid 1px var(--black);}
-.btn-principal:hover{ background-color: var(--black); color: var(--white); transition: ease-out .3s;}
+.btn-principal{border:solid 1px var(--black);}
+.btn-principal a{color: var(--black); }
+.btn-principal:hover{ background-color: var(--black);transition: ease-out .3s;}
+.btn-principal:hover a{ color: var(--white); transition: ease-out .3s;}
 .btn-secundario{color: var(--blue); border:solid 1px var(--blue);}
 .btn-secundario:hover{ background-color: var(--blue); color: var(--white); transition: ease-out .3s;}
 /* LOGO */
@@ -36,3 +38,37 @@
     stroke: #4691f6;
     stroke-width: 1;
   }
+/* card */
+.card{
+  transition: ease-out .3s;
+  border: solid 1px var(--black);
+  cursor: pointer;
+}
+.card:hover{
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
+    transition: ease-in .3s;
+}
+.card h6{font-weight: bold;}
+.card p, .card h5{font-family: var(--roboto);}
+.card p{margin: 10px 0;}
+.modelo-year{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.card-desc{padding: 10px;}
+
+/*===== Formularios =====*/
+.form{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: solid 2px var(--blue);
+  padding: 14px;
+}
+.campo input, .campo textarea, .campo select{
+  width: 100%;
+  padding: 5px 10px;
+  border: solid 1px var(--blue);
+}
