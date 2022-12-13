@@ -34,7 +34,7 @@
         <input type="checkbox" name="btn-menu" id="btn-menu">
         <nav class="nav-principal">
           <a href="index.html">Inicio</a>
-          <a href="catalogo.html">Modelos</a>
+          <a href="catalogo.html" rel="prefetch" as="document">Modelos</a>
           <a href="mantenimiento.html">Mantenimiento</a>
         </nav>
       </div>
@@ -56,7 +56,8 @@
     <div class="destacado-content">
       <div class="card" ng-repeat="carro in carros | filter: carro.Destacado = true">
         <picture>
-          <img ng-src="src/img/autos/{{carro.img}}.jpg" alt="">
+          <source ng-srcset="src/img/autos/{{carro.img}}.webp" type="image/webp">
+          <img ng-src="src/img/autos/{{carro.img}}.jpg" loading="lazy" alt="">
         </picture>
         <div class="card-desc">
           <div class="modelo-year">
@@ -92,7 +93,7 @@
   <footer class="bg-grey">
     <div class="footer-content container">
       <picture>
-        <img class="logo" src="src/img/logos/Scott Motors Logo Withe.png" alt="">
+        <img class="logo" src="src/img/logos/Scott Motors Logo Withe.png" loading="lazy" alt="">
       </picture>
       <nav>
         <a href="">Nosotros</a>
